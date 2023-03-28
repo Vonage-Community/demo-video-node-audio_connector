@@ -1,0 +1,23 @@
+{
+  "name": "koa_app_spike",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@koa/router": "^12.0.0",
+    "@symblai/symbl-js": "^1.4.8",
+    "dotenv": "^16.0.3",
+    "koa": "^2.14.1",
+    "koa-ejs": "^4.3.0",
+    "koa-static": "^5.0.0",
+    "koa-websocket": "^7.0.0",
+    "opentok": "^3.0.1-beta",
+    "uuid": "^9.0.0"
+  }
+}

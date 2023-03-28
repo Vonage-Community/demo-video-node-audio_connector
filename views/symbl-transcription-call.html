@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Vonage Video Demo - Audio Connector &amp; Symbl.ai: Video Call</title>
+		<link rel="stylesheet" href="http://cdn.simplecss.org/simple.min.css">
+		<link href="css/app.css" rel="stylesheet" type="text/css">
+		<script src="https://static.opentok.com/v2/js/opentok.min.js"></script>
+		<script src="/js/transcribe.js"></script>
+		<script type="text/javascript">
+				const apiKey = "<%= apiKey %>";
+				const sessionId = "<%= sessionId %>";
+				const token = "<%= token %>";
+		</script>
+	</head>
+	<body>
+		<h2>Vonage Video Demo - Audio Connector &amp; Symbl.ai: Video Call</h2>
+		<div id="publisher"></div>
+
+		<div id="subscribers"></div>
+		<input id="username" placeholder="Please enter your name." />
+    <button id="join-btn">Join</button>
+		<div><button id="transcribe-btn">Start Transcription</button></div>
+		<p><a href="/symbl-transcription" target="_blank" class="button">Get Transcription</a></p>
+		<p>Meeting Link: <a href="<%= meetingLink %>"><%= meetingLink %></a></p>
+		<script src="/js/koa-opentok.js"></script>
+	</body>
+</html>
