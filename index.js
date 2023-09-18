@@ -23,7 +23,9 @@ app.context.opentok = opentok;
 
 const symblSdk = require('@symblai/symbl-js').sdk;
 app.context.symblSdk = symblSdk;
-app.context.transcriptions = [];
+
+const SymblProcessor = require('./symbl-processor');
+app.context.symblProcessor = new SymblProcessor();
 
 symblSdk.init({
   appId: process.env.SYMBL_APP_ID,

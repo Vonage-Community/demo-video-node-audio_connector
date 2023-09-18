@@ -8,4 +8,10 @@ http.post('/transcribe', transcriptionController.postSymblTranscription);
 
 http.get('/symbl-transcription', transcriptionController.getSymblTranscription);
 
+http.get('/symbl-action-items', transcriptionController.getSymblActionItems);
+
+http.get('/symbl-questions', transcriptionController.getSymblQuestions);
+
+http.get('/symbl-topics', transcriptionController.getSymblTopics);
+
 module.exports = http;
