@@ -45,13 +45,15 @@ node index.js
 
 7. In your browser, navigate to `localhost:3000`
 
-6. Click on the 'Video call with Audio Transcription via Symbl.ai' button
+8. Select the Call Configuration Options for the call data that you want processed
 
-7. Enter your name in the form field and click 'Join'
+9. Click on the 'Video call with Audio Processing' button
 
-8. Share the 'Meeting Link' with other participants
+10. On the call screen, enter your name in the form field and click 'Join'
 
-9. Once all participants have joined, click on the 'Start Transcription' button (there is normally a delay of a second or two before the transcription starts)
+11. Share the 'Meeting Link' with other participants
 
-10. To view the transcription of your video call, click on the 'Get Transcription' button
+12. Once all participants have joined, click on the 'Start Processing' button (there is normally a delay of a second or two before the processing starts)
+
+13. To view the processed output of your video call, click on relevant links below the 'Processed Output' heading
 
