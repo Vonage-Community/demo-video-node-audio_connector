@@ -7,6 +7,27 @@
 	</head>
 	<body>
 		<h2>Vonage Video Demo</h2>
-		<p><a href="/symbl-transcription-call" class="button">Video call with Audio Transcription via Symbl.ai</a></p>
+		<form method="post" action="/symbl-transcription-call">
+			<fieldset>
+					<legend>Call Configuration Options</legend>
+					<div>
+						<input type="checkbox" id="transcription" name="config" value="transcription">
+						<label for="transcription">Transcription</label>
+					</div>
+					<div>
+						<input type="checkbox" id="action-items" name="config" value="actionItems" />
+						<label for="action-items">Action Items</label>
+					</div>
+					<div>
+						<input type="checkbox" id="questions" name="config" value="questions">
+						<label for="questions">Questions</label>
+					</div>
+					<div>
+						<input type="checkbox" id="topics" name="config" value="topics" />
+						<label for="topics">Topics</label>
+					</div>
+					<button type="submit">Video Call with Audio Processing</button>
+			</fieldset>
+		</form>
 	</body>
 </html>

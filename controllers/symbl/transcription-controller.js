@@ -1,13 +1,21 @@
-exports.getSymblTranscriptionCall = (ctx) => {
+exports.postSymblTranscriptionCall = (ctx) => {
 	let otSession = ctx.openTokSession;
 	let token = otSession.generateToken();
 	let meetingLinkURI = `http://${process.env.TUNNEL_DOMAIN}/join-call`;
+	let symblProcessor = ctx.symblProcessor;
+	let configOptions = ctx.request.body.config;
+	let config = [];
+	if(typeof configOptions == "string") { config.push(configOptions) }
+	if(Array.isArray(configOptions)) { config.push(...configOptions) }
+	// console.log(config);
+	symblProcessor.setConfig(config);
 
   return ctx.render('symbl-transcription-call', {
 		apiKey: otSession.ot.apiKey,
     sessionId: otSession.sessionId,
     token: token,
-		meetingLink: meetingLinkURI
+		meetingLink: meetingLinkURI,
+		config: config
 	});
 };
 
@@ -21,6 +29,8 @@ exports.postSymblTranscription = async (ctx, next) => {
 	let ws = ctx.ws;
 	let insightTypes = symblProcessor.setInsightTypes();
 	let handlers = symblProcessor.sethandlers();
+	console.log(insightTypes);
+	console.log(handlers);
 
 	opentok.listStreams(otSession.sessionId, function(error, streams) {
 		if (error) {

@@ -8,12 +8,15 @@ const render = require('koa-ejs');
 const path = require('path');
 const serve = require('koa-static');
 const websockify = require('koa-websocket');
+const bodyParser = require('koa-bodyparser');
 const OpenTok = require("opentok");
 
 const app = new Koa();
 const socket = websockify(app);
 const ws = new Router();
+app.use(bodyParser());
 app.context.ws = ws;
+
 
 const basicHttp = require('./routes/basic');
 const symblTranscriptionHttp = require('./routes/symbl/transcription');

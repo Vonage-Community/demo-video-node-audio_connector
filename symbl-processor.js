@@ -4,11 +4,15 @@ class SymblProcessor {
 		this.insights = [];
 		this.topics = [];
 		this.config = {
-			transcription: true,
+			transcription: false,
 			actionItems: false,
 			questions: false,
 			topics: false
 		}
+	}
+
+	setConfig(config) {
+		config.forEach(option => this.config[option] = true)
 	}
 
 	sethandlers() {

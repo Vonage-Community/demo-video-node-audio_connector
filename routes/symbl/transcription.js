@@ -2,7 +2,7 @@ const Router = require('@koa/router');
 const http = new Router();
 const transcriptionController = require('../../controllers/symbl/transcription-controller');
 
-http.get('/symbl-transcription-call', transcriptionController.getSymblTranscriptionCall);
+http.post('/symbl-transcription-call', transcriptionController.postSymblTranscriptionCall);
 
 http.post('/transcribe', transcriptionController.postSymblTranscription);
 
