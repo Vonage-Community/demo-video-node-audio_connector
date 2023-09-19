@@ -20,7 +20,6 @@ class SymblProcessor {
 		if (this.config.transcription) { handlers.onMessageResponse = this.onMessageResponseHandler }
 		if (this.config.actionItems || this.config.questions) { handlers.onInsightResponse = this.onInsightResponseHandler }
 		if (this.config.topics) { handlers.onTopicResponse = this.onTopicResponseHandler }
-		console.log(handlers);
 		return handlers;
 	}
 
@@ -28,7 +27,6 @@ class SymblProcessor {
 		let insightTypes = [];
 		if (this.config.actionItems) { insightTypes.push('action_item') }
 		if (this.config.questions) { insightTypes.push('question') }
-		console.log(insightTypes);
 		return insightTypes;
 	}
 
@@ -51,17 +49,14 @@ class SymblProcessor {
 	}
 
 	onMessageResponseHandler = (data) => {
-		console.log('onMessageResponse', JSON.stringify(data, null, 2));
 		this.messages.push(data);
 	}
 
 	onInsightResponseHandler = (data) => {
-		console.log('onInsightResponse', JSON.stringify(data, null, 2));
 		this.insights.push(data);
 	}
 
 	onTopicResponseHandler = (data) => {
-		console.log('onTopicResponse', JSON.stringify(data, null, 2));
 		this.topics.push(data);
 	}
 }
