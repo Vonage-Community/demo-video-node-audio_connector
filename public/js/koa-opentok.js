@@ -9,8 +9,6 @@ function initializeOpenTok(){
   // Get the name
   let displayName = document.querySelector('#username').value;
 
-  console.log(displayName);
-
   // Initialize a Publisher, and place it into the element with id="publisher"
   const publisher = OT.initPublisher('publisher', {name: displayName});
 

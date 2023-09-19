@@ -28,14 +28,11 @@ exports.postSymblProcessing = async (ctx, next) => {
 	let ws = ctx.ws;
 	let insightTypes = symblProcessor.setInsightTypes();
 	let handlers = symblProcessor.sethandlers();
-	console.log(insightTypes);
-	console.log(handlers);
 
 	opentok.listStreams(otSession.sessionId, function(error, streams) {
 		if (error) {
 			console.log('Error:', error.message);
 		} else {
-			console.log(streams);
 			streams.forEach(async stream => {
 				let stream_id = stream.id;
 				let stream_name = stream.name;
@@ -68,7 +65,6 @@ exports.postSymblProcessing = async (ctx, next) => {
 
 				ws.get(`/socket/${stream_id}`, ctx => {
 					let connection = symblConnection;
-					console.log(connection);
 					ctx.websocket.on('message', function(message) {
 
 						try {
