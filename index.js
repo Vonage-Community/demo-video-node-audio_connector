@@ -19,7 +19,7 @@ app.context.ws = ws;
 
 
 const basicHttp = require('./routes/basic');
-const symblTranscriptionHttp = require('./routes/symbl/transcription');
+const symblTranscriptionHttp = require('./routes/symbl');
 
 const opentok = new OpenTok(process.env.VONAGE_API_KEY, process.env.VONAGE_API_SECRET);
 app.context.opentok = opentok;

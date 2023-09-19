@@ -1,4 +1,4 @@
-exports.postSymblTranscriptionCall = (ctx) => {
+exports.postSymblCall = (ctx) => {
 	let otSession = ctx.openTokSession;
 	let token = otSession.generateToken();
 	let meetingLinkURI = `http://${process.env.TUNNEL_DOMAIN}/join-call`;
@@ -7,10 +7,9 @@ exports.postSymblTranscriptionCall = (ctx) => {
 	let config = [];
 	if(typeof configOptions == "string") { config.push(configOptions) }
 	if(Array.isArray(configOptions)) { config.push(...configOptions) }
-	// console.log(config);
 	symblProcessor.setConfig(config);
 
-  return ctx.render('symbl-transcription-call', {
+  return ctx.render('symbl-call', {
 		apiKey: otSession.ot.apiKey,
     sessionId: otSession.sessionId,
     token: token,
@@ -19,7 +18,7 @@ exports.postSymblTranscriptionCall = (ctx) => {
 	});
 };
 
-exports.postSymblTranscription = async (ctx, next) => {
+exports.postSymblProcessing = async (ctx, next) => {
 	let opentok = ctx.opentok;
 	let otSession = ctx.openTokSession;
 	let token = otSession.generateToken();
