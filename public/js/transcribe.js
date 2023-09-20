@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			const response = await fetch('/transcribe', {
 				method: 'post'
 			});
-			console.log('Transcription requested', response);
+			console.log('Processing requested', response);
 		} catch(err) {
 			console.error(`Error: ${err}`);
 		}
