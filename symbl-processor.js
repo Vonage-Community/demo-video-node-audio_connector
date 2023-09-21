@@ -17,16 +17,16 @@ class SymblProcessor {
 
 	sethandlers() {
 		let handlers = {};
-		if (this.config.transcription) { handlers.onMessageResponse = this.onMessageResponseHandler }
-		if (this.config.actionItems || this.config.questions) { handlers.onInsightResponse = this.onInsightResponseHandler }
-		if (this.config.topics) { handlers.onTopicResponse = this.onTopicResponseHandler }
+		if (this.config.transcription) { handlers.onMessageResponse = this.onMessageResponseHandler; }
+		if (this.config.actionItems || this.config.questions) { handlers.onInsightResponse = this.onInsightResponseHandler; }
+		if (this.config.topics) { handlers.onTopicResponse = this.onTopicResponseHandler; }
 		return handlers;
 	}
 
 	setInsightTypes() {
 		let insightTypes = [];
-		if (this.config.actionItems) { insightTypes.push('action_item') }
-		if (this.config.questions) { insightTypes.push('question') }
+		if (this.config.actionItems) { insightTypes.push('action_item'); }
+		if (this.config.questions) { insightTypes.push('question'); }
 		return insightTypes;
 	}
 
