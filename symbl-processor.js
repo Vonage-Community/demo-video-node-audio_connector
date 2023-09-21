@@ -8,11 +8,11 @@ class SymblProcessor {
 			actionItems: false,
 			questions: false,
 			topics: false
-		}
+		};
 	}
 
 	setConfig(config) {
-		config.forEach(option => this.config[option] = true)
+		config.forEach(option => this.config[option] = true);
 	}
 
 	sethandlers() {
