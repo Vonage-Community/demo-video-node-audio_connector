@@ -19,6 +19,6 @@
     "koa-static": "^5.0.0",
     "koa-websocket": "^7.0.0",
     "opentok": "^3.0.1-beta",
-    "uuid": "^9.0.0"
+    "uuid": "^14.0.0"
   }
 }
